@@ -1,0 +1,19 @@
+<% if (theme.analytics.baidu) { %>
+  <script defer src='https://hm.baidu.com/hm.js?<%- theme.analytics.baidu %>'></script>
+<% } %>
+
+<% if (theme.analytics.cnzz) { %>
+  <script defer src='https://s9.cnzz.com/z_stat.php?id=<%- theme.analytics.cnzz %>&web_id=<%- theme.analytics.cnzz %>'></script>
+<% } %>
+
+<% if (theme.analytics.google) { %>
+  <script>
+    window.ga = window.ga || function () {
+      (ga.q = ga.q || []).push(arguments)
+    };
+    ga.l = +new Date;
+    ga('create', '<%- theme.analytics.google %>', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script defer src='https://www.google-analytics.com/analytics.js'></script>
+<% } %>

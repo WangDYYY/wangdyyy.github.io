@@ -1,0 +1,60 @@
+# name 为此 Action 的名字
+name: hexo blog CI
+
+# on 触发条件，当满足条件时会触发此任务，这里的 on.push.branches.$.master 是指当 master 分支收到 push 后执行任务。
+on:
+  push:
+    branches:
+      - main # default branch
+
+
+# jobs 为此 Action 下的任务列表
+
+jobs:
+  build:
+    # jobs.{job}.runs-on 任务所需容器，可选值：ubuntu-latest、windows-latest、macos-latest。
+    runs-on: ubuntu-latest
+   
+    # jobs.{job}.steps 一个步骤数组，可以把所要干的事分步骤放到这里。
+    steps:
+      # jobs.{job}.steps.$.uses 所要调用的 Action，可以到 https://github.com/actions 查看更多。
+      - uses: actions/checkout@v3
+        # jobs.{job}.steps.$.with 一个对象，调用 Action 传的参数，具体可以查看所使用 Action 的说明。
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # If your repository depends on submodule, please see: https://github.com/actions/checkout
+          submodules: recursive
+
+      # jobs.{job}.name 任务名称
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Cache NPM dependencies
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-npm-cache
+          restore-keys: |
+            ${{ runner.OS }}-npm-cache
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./public
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
