@@ -56,8 +56,10 @@ preview:
   background:
     type: image # image video
     default_image:
-      light: /images/theme/welcome-image.jpg
-      dark: /images/theme/welcome-image.jpg
+    # mountains-55067_640.png
+    # /images/theme/welcome-image.jpg
+      light: /images/theme/forest-6524635_1920.jpg
+      dark: /images/theme/forest-6524635_1920.jpg
     video:
     api: # https://source.unsplash.com/random/1920x1080
     size: cover # css: background-size
