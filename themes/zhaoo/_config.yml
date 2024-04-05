@@ -127,7 +127,7 @@ excerpt:
 
 # Post Image
 post_image:
-  random: galleries # local galleries
+  random: local # local galleries
   default: # https://source.unsplash.com/random/800x600 #/images/theme/post-image.jpg
 
 # Page Size
