@@ -1,9 +1,12 @@
 ---
 title: MQ队列学习
+author: wangdyyy
 tags: 学习笔记
 categories:
-- 技术笔记
+  - 技术笔记
+date: 2024-06-13 17:28:39
 ---
+
 # MQ队列学习
 
 ## 定义
