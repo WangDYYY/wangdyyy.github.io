@@ -5,3 +5,5 @@
 node_modules/
 public/
 .deploy*/
+/**/**/.obsidian/
+/**/**/模版/
