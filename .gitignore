@@ -5,5 +5,10 @@
 node_modules/
 public/
 .deploy*/
+<<<<<<< HEAD
 /**/**/.obsidian/
 /**/**/模版/
+=======
+*/*/.obsidian/
+*/*/模版/
+>>>>>>> 0012dbe06167d605cd580903fc9d12266a4f9db5
