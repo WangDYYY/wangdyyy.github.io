@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/zhaoo/hexo-theme-zhaoo/issues"
   },
-  "homepage": "https://github.com/zhaoo/hexo-theme-zhaoo#readme"
+  "homepage": "https://github.com/zhaoo/hexo-theme-zhaoo#readme",
+  "dependencies": {
+    "hexo-theme-zhaoo": "file:"
+  }
 }
