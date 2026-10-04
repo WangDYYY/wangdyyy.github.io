@@ -157,4 +157,17 @@
     "/../galleries/黄山/IMG_20241228_173751.jpg",
     "/../galleries/黄山/IMG_20241228_113059.jpg"
   ]
-}]
+},{
+  "name":"三亚",
+  "cover":"/../galleries/三亚/IMG_20260517_061359(1).jpg",
+  "description":"三亚一日游，早上从海口出发，下午到三亚，晚上回海口",
+"photos":[
+    "/../galleries/三亚/IMG_20260514_103740.JPG",
+    "/../galleries/三亚/IMG_20260515_100923.JPG",
+    "/../galleries/三亚/IMG_20260516_162141.jpg",
+    "/../galleries/三亚/IMG_20260517_061359(1).JPG",
+    "/../galleries/三亚/IMG_20260517_185503.jpg",
+    "/../galleries/三亚/IMG_20260518_185351.JPG"
+  ]
+}
+]
